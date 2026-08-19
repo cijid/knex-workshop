@@ -51,7 +51,7 @@ Knex
 
 ### Stretch Goals
 
-[ ] Increase seed data amount by an exponential scale
+[X] Increase seed data amount by an exponential scale
 
 [ ] Create front-end to display the data coming back from my API
 
