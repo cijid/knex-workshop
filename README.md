@@ -35,7 +35,7 @@ I thought it easier to start off by creating an ontology before I create my ERD.
   - Bike Components
   - Riders
 
-[ ] Create ERD
+- [x] Create ERD
 
 [ ] Express
 
