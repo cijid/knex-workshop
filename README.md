@@ -45,9 +45,9 @@ Express
 
 Knex
 
-- [ ] Seed initial data into database using Knex
+- [x] Seed initial data into database using Knex
 
-- [ ] Retrieve data from the database using the join method of Knex
+- [x] Retrieve data from the database using the join method of Knex
 
 ### Stretch Goals
 
