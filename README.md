@@ -37,16 +37,25 @@ I thought it easier to start off by creating an ontology before I create my ERD.
 - Riders
 
 [ ] Create ERD
+
 [ ] Express
+
 [ ] API endpoints covering CRUD functionality
+
 [ ] Parameterized endpoints
+
 [ ] Knex
+
 [ ] Seed initial data into database using Knex
+
 [ ] Retrieve data from the database using the join method of Knex
 
 ### Stretch Goals
 
 [ ] Increase seed data amount by an exponential scale
+
 [ ] Create front-end to display the data coming back from my API
+
 [ ] Send an HTTP request to a 3rd part API to seed dtabase
+
 [ ] Transform data into format I want for my database prior to insertion
