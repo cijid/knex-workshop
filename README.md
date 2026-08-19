@@ -40,15 +40,15 @@ I thought it easier to start off by creating an ontology before I create my ERD.
 
 [ ] Express
 
-[ ] API endpoints covering CRUD functionality
+- [ ] API endpoints covering CRUD functionality
 
-[ ] Parameterized endpoints
+- [ ] Parameterized endpoints
 
 [ ] Knex
 
-[ ] Seed initial data into database using Knex
+- [ ] Seed initial data into database using Knex
 
-[ ] Retrieve data from the database using the join method of Knex
+- [ ] Retrieve data from the database using the join method of Knex
 
 ### Stretch Goals
 
