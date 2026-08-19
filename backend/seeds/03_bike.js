@@ -87,31 +87,29 @@ exports.seed = async function (knex) {
   let growThis = 4;
 
   for (let i = 0; i < 1000; i++) {
-    bikeSeed.forEach((bike) => {
-      const randomMake =
-        bikeMakes[Math.floor(Math.random() * bikeMakes.length)];
-      const randomModel =
-        bikeModels[Math.floor(Math.random() * bikeModels.length)];
-      const randomStyle =
-        bikeStyles[Math.floor(Math.random() * bikeStyles.length)];
-      const randomYear = bikeYear[Math.floor(Math.random() * bikeYear.length)];
-      const randomRider = Math.floor(Math.random() * 3003) + 1;
+    const bike = bikeSeed[Math.floor(Math.random() * bikeSeed.length)];
+    const randomMake = bikeMakes[Math.floor(Math.random() * bikeMakes.length)];
+    const randomModel =
+      bikeModels[Math.floor(Math.random() * bikeModels.length)];
+    const randomStyle =
+      bikeStyles[Math.floor(Math.random() * bikeStyles.length)];
+    const randomYear = bikeYear[Math.floor(Math.random() * bikeYear.length)];
+    const randomRider = Math.floor(Math.random() * 1003) + 1;
 
-      const randomComponent = Math.floor(Math.random() * 3003) + 1;
+    const randomComponent = Math.floor(Math.random() * 1003) + 1;
 
-      bikeData.push({
-        ...bike,
-        id: growThis,
-        make: randomMake,
-        model: randomModel,
-        style: randomStyle,
-        year: randomYear,
-        rider_id: randomRider,
-        bike_components_id: randomComponent,
-      });
-
-      growThis++;
+    bikeData.push({
+      ...bike,
+      id: growThis,
+      make: randomMake,
+      model: randomModel,
+      style: randomStyle,
+      year: randomYear,
+      rider_id: randomRider,
+      bike_components_id: randomComponent,
     });
+
+    growThis++;
   }
 
   await knex("bike").insert(bikeData);

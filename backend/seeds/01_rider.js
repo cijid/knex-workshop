@@ -55,30 +55,29 @@ exports.seed = async function (knex) {
   let growThis = 4;
 
   for (let i = 0; i < 1000; i++) {
-    riderSeed.forEach((rider) => {
-      const randomName =
-        riderNames[Math.floor(Math.random() * riderNames.length)];
-      const randomNation =
-        riderNations[Math.floor(Math.random() * riderNations.length)];
-      const randomBirthday =
-        riderBirthdays[Math.floor(Math.random() * riderBirthdays.length)];
-      const randomHeight =
-        riderHeights[Math.floor(Math.random() * riderHeights.length)];
-      const randomWeight =
-        riderWeights[Math.floor(Math.random() * riderWeights.length)];
+    const rider = riderSeed[Math.floor(Math.random() * riderSeed.length)];
+    const randomName =
+      riderNames[Math.floor(Math.random() * riderNames.length)];
+    const randomNation =
+      riderNations[Math.floor(Math.random() * riderNations.length)];
+    const randomBirthday =
+      riderBirthdays[Math.floor(Math.random() * riderBirthdays.length)];
+    const randomHeight =
+      riderHeights[Math.floor(Math.random() * riderHeights.length)];
+    const randomWeight =
+      riderWeights[Math.floor(Math.random() * riderWeights.length)];
 
-      riderData.push({
-        ...rider,
-        id: growThis,
-        name: randomName,
-        nationality: randomNation,
-        birthday: randomBirthday,
-        height: randomHeight,
-        weight: randomWeight,
-      });
-
-      growThis++;
+    riderData.push({
+      ...rider,
+      id: growThis,
+      name: randomName,
+      nationality: randomNation,
+      birthday: randomBirthday,
+      height: randomHeight,
+      weight: randomWeight,
     });
+
+    growThis++;
   }
 
   await knex("rider").insert(riderData);

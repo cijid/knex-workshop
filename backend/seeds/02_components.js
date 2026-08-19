@@ -177,41 +177,39 @@ exports.seed = async function (knex) {
   let growThis = 4;
 
   for (let i = 0; i < 1000; i++) {
-    componentSeed.forEach(() => {
-      componentData.push({
-        id: growThis,
+    componentData.push({
+      id: growThis,
 
-        crankset: cranksets[Math.floor(Math.random() * cranksets.length)],
+      crankset: cranksets[Math.floor(Math.random() * cranksets.length)],
 
-        fork: forks[Math.floor(Math.random() * forks.length)],
+      fork: forks[Math.floor(Math.random() * forks.length)],
 
-        chain: chains[Math.floor(Math.random() * chains.length)],
+      chain: chains[Math.floor(Math.random() * chains.length)],
 
-        shifter: shifters[Math.floor(Math.random() * shifters.length)],
+      shifter: shifters[Math.floor(Math.random() * shifters.length)],
 
-        handlebar: handlebars[Math.floor(Math.random() * handlebars.length)],
+      handlebar: handlebars[Math.floor(Math.random() * handlebars.length)],
 
-        derailleur: derailleurs[Math.floor(Math.random() * derailleurs.length)],
+      derailleur: derailleurs[Math.floor(Math.random() * derailleurs.length)],
 
-        pedals: pedals[Math.floor(Math.random() * pedals.length)],
+      pedals: pedals[Math.floor(Math.random() * pedals.length)],
 
-        brakes: brakes[Math.floor(Math.random() * brakes.length)],
+      brakes: brakes[Math.floor(Math.random() * brakes.length)],
 
-        tires: tires[Math.floor(Math.random() * tires.length)],
+      tires: tires[Math.floor(Math.random() * tires.length)],
 
-        frame: frames[Math.floor(Math.random() * frames.length)],
+      frame: frames[Math.floor(Math.random() * frames.length)],
 
-        wheel: wheels[Math.floor(Math.random() * wheels.length)],
+      wheel: wheels[Math.floor(Math.random() * wheels.length)],
 
-        saddle: saddles[Math.floor(Math.random() * saddles.length)],
+      saddle: saddles[Math.floor(Math.random() * saddles.length)],
 
-        cassette: cassettes[Math.floor(Math.random() * cassettes.length)],
+      cassette: cassettes[Math.floor(Math.random() * cassettes.length)],
 
-        stem: stems[Math.floor(Math.random() * stems.length)],
-      });
-
-      growThis++;
+      stem: stems[Math.floor(Math.random() * stems.length)],
     });
+
+    growThis++;
   }
 
   await knex("bike_components").insert(componentData);

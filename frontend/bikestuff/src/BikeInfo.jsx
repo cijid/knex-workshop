@@ -37,7 +37,8 @@ function BikeInfo({ bike, setBike }) {
   return (
     <div>
       <h2>
-        {bike.make} {bike.model}
+        <p>{bike.model}</p>
+        <p>Manufactured by {bike.make}</p>
       </h2>
 
       <p>ID: {bike.id}</p>
