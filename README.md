@@ -35,13 +35,14 @@ I thought it easier to start off by creating an ontology before I create my ERD.
 - Bike Model
 - Bike Components
 - Riders
-  [ ] Create ERD
-  [ ] Express
-  [ ] API endpoints covering CRUD functionality
-  [ ] Parameterized endpoints
-  [ ] Knex
-  [ ] Seed initial data into database using Knex
-  [ ] Retrieve data from the database using the join method of Knex
+
+[ ] Create ERD
+[ ] Express
+[ ] API endpoints covering CRUD functionality
+[ ] Parameterized endpoints
+[ ] Knex
+[ ] Seed initial data into database using Knex
+[ ] Retrieve data from the database using the join method of Knex
 
 ### Stretch Goals
 
