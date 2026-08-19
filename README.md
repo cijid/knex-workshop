@@ -58,3 +58,15 @@ Knex
 [ ] Send an HTTP request to a 3rd part API to seed dtabase
 
 [ ] Transform data into format I want for my database prior to insertion
+
+## How to Use Application
+
+### Front End
+
+Enter a bike ID to query a bikes information from the backend.
+Test your ability to patch the backend database by changing a bike's model name.
+Test your ability to delete a bike from the backend data base by clicking the delete button.
+
+### Back End
+
+You will need to create a .env file with your connection info and update the connectionString in knexfile.js
