@@ -37,13 +37,13 @@ I thought it easier to start off by creating an ontology before I create my ERD.
 
 - [x] Create ERD
 
-[ ] Express
+Express
 
 - [ ] API endpoints covering CRUD functionality
 
 - [ ] Parameterized endpoints
 
-[ ] Knex
+Knex
 
 - [ ] Seed initial data into database using Knex
 
