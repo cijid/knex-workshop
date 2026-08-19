@@ -11,25 +11,48 @@ app.get("/", (req, res) => {
 });
 
 app.get("/bikes", (req, res) => {
-  knex("bike")
-    .select("*")
-    .then((data) => {
-      var bikeMakes = data.map((bike) => bike.make);
-      res.json(bikeMakes);
-    });
+  let query = knex("bike").select("*");
+  if (req.query.id) {
+    query = query.where("id", req.query.id);
+  }
+  query.then((data) => {
+    res.json(data);
+  });
 });
 
 app.get("/bikes/:id", (req, res) => {
   knex("bike")
     .join("bike_components", "bike.bike_components_id", "bike_components.id")
+    .join("rider", "bike.rider_id", "rider.id")
     .where("bike.id", req.params.id)
-    .select("*")
+    .select(
+      "bike.*",
+      "bike_components.crankset",
+      "bike_components.fork",
+      "bike_components.chain",
+      "bike_components.shifter",
+      "bike_components.handlebar",
+      "bike_components.derailleur",
+      "bike_components.pedals",
+      "bike_components.brakes",
+      "bike_components.tires",
+      "bike_components.frame",
+      "bike_components.wheel",
+      "bike_components.saddle",
+      "bike_components.cassette",
+      "bike_components.stem",
+      "rider.name",
+      "rider.nationality",
+      "rider.birthday",
+      "rider.height",
+      "rider.weight",
+    )
     .then((data) => {
       if (data.length === 0) {
         return res.status(404).json({ error: "Bike not found" });
       }
-      var bikeInfo = data.map((details) => details);
-      res.json(bikeInfo);
+
+      res.json(data);
     });
 });
 

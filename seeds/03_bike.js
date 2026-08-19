@@ -40,7 +40,7 @@ exports.seed = async function (knex) {
 
   const bikeData = [...bikeSeed];
 
-  const bikeNames = [
+  const bikeMakes = [
     "Spoke & Mirrors",
     "Wheelie Bad Bikes",
     "Handlebar None",
@@ -71,6 +71,7 @@ exports.seed = async function (knex) {
     "She Shredder",
     "Stompatron",
   ];
+
   const bikeStyles = [
     "MTB",
     "Road",
@@ -80,27 +81,33 @@ exports.seed = async function (knex) {
     "City",
     "Cargo",
   ];
+
   const bikeYear = [2001, 2006, 1987, 2025, 2026, 2021, 1991];
 
   let growThis = 4;
 
   for (let i = 0; i < 1000; i++) {
     bikeSeed.forEach((bike) => {
-      const randomName =
-        bikeNames[Math.floor(Math.random() * bikeNames.length)];
+      const randomMake =
+        bikeMakes[Math.floor(Math.random() * bikeMakes.length)];
       const randomModel =
         bikeModels[Math.floor(Math.random() * bikeModels.length)];
       const randomStyle =
         bikeStyles[Math.floor(Math.random() * bikeStyles.length)];
       const randomYear = bikeYear[Math.floor(Math.random() * bikeYear.length)];
+      const randomRider = Math.floor(Math.random() * 3003) + 1;
+
+      const randomComponent = Math.floor(Math.random() * 3003) + 1;
 
       bikeData.push({
         ...bike,
         id: growThis,
-        make: randomName,
+        make: randomMake,
         model: randomModel,
         style: randomStyle,
         year: randomYear,
+        rider_id: randomRider,
+        bike_components_id: randomComponent,
       });
 
       growThis++;

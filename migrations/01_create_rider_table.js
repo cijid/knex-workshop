@@ -5,7 +5,11 @@
 exports.up = function (knex) {
   return knex.schema.createTable("rider", (table) => {
     table.increments("id");
-    table.string("name", 250);
+    table.string("name", 250).index();
+    table.string("nationality", 250).index();
+    table.date("birthday");
+    table.integer("height");
+    table.integer("weight");
   });
 };
 
