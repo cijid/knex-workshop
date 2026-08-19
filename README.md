@@ -39,9 +39,9 @@ I thought it easier to start off by creating an ontology before I create my ERD.
 
 Express
 
-- [ ] API endpoints covering CRUD functionality
+- [x] API endpoints covering CRUD functionality
 
-- [ ] Parameterized endpoints
+- [x] Parameterized endpoints
 
 Knex
 
