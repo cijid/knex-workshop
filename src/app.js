@@ -8,14 +8,14 @@ app.get("/", (req, res) => {
   res.send("Application up and running.");
 });
 
-// app.get("/bikes", (req, res) => {
-//   knex("bikes")
-//     .select("*")
-//     .then((data) => {
-//       var petNames = data.map((pet) => pet.name);
-//       res.json(petNames);
-//     });
-// });
+app.get("/bikes", (req, res) => {
+  knex("bike")
+    .select("*")
+    .then((data) => {
+      var bikeMakes = data.map((bike) => bike.make);
+      res.json(bikeMakes);
+    });
+});
 
 app.listen(port, () => {
   console.log("Your Knex and Express application are running successfully");

@@ -7,6 +7,7 @@ exports.up = function (knex) {
     table.increments("id");
     table.string("make", 250);
     table.string("model", 250);
+    table.string("style", 250);
     table.integer("year", 250);
   });
 };

@@ -12,7 +12,6 @@ exports.up = function (knex) {
     table.string("handlebar", 250);
     table.string("derailleur", 250);
     table.string("pedals", 250);
-    table.string("model", 250);
     table.string("brakes", 250);
     table.string("tires", 250);
     table.string("frame", 250);
