@@ -1,5 +1,9 @@
 const express = require("express");
 const app = express();
+app.use(express.json());
+const cors = require("cors");
+app.use(cors());
+
 const logger = require("morgan");
 app.use(logger("tiny"));
 const port = 8081;

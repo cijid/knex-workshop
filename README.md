@@ -53,7 +53,7 @@ Knex
 
 [X] Increase seed data amount by an exponential scale
 
-[ ] Create front-end to display the data coming back from my API
+[X] Create front-end to display the data coming back from my API
 
 [ ] Send an HTTP request to a 3rd part API to seed dtabase
 

@@ -1,21 +1,29 @@
-import { useState, useEffect } from "react";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
-import App from "./App";
+import { useState } from "react";
 
-const Navbar = ({ searchQuery, setSearchQuery }) => {
+function Navbar({ getBike }) {
+  const [bikeID, setBikeID] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    getBike(bikeID);
+  };
+
   return (
-    <nav className="navbar">
+    <nav>
       <h1>BIKES</h1>
-      <div className="search-bar">
+
+      <form onSubmit={handleSubmit}>
         <input
-          type="text"
-          placeholder="Search Bikes"
-          value={searchQuery}
-          onChange={(event) => setSearchQuery(event.target.value)}
+          type="number"
+          value={bikeID}
+          onChange={(event) => setBikeID(event.target.value)}
+          placeholder="Bike ID"
         />
-      </div>
+
+        <button type="submit">Search</button>
+      </form>
     </nav>
   );
-};
+}
 
 export default Navbar;

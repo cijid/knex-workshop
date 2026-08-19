@@ -1,26 +1,27 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Navbar from "./Navbar";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
+import BikeInfo from "./BikeInfo";
 import "./App.css";
 
-const bikesURL = "http://localhost:8081/bikes";
-
 function App() {
-  const [bikes, setBikes] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [bike, setBike] = useState(null);
 
-  useEffect(() => {
-    fetch(bikesURL)
+  const getBike = (bikeID) => {
+    fetch(`http://localhost:8081/bikes/${bikeID}`)
       .then((response) => response.json())
       .then((bikeData) => {
-        setBikes(bikeData);
+        setBike(bikeData[0]);
+      })
+      .catch((error) => {
+        console.error("Error fetching bike:", error);
       });
-  }, []);
+  };
+
   return (
     <>
-      <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <Navbar getBike={getBike} />
+
+      {bike && <BikeInfo bike={bike} setBike={setBike} />}
     </>
   );
 }
