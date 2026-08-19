@@ -28,13 +28,12 @@ I thought it easier to start off by creating an ontology before I create my ERD.
 
 ### My Goals
 
-[x] Create Ontology
-
-- Bikes
-- Bike Make
-- Bike Model
-- Bike Components
-- Riders
+- [x] Create Ontology
+  - Bikes
+  - Bike Make
+  - Bike Model
+  - Bike Components
+  - Riders
 
 [ ] Create ERD
 
