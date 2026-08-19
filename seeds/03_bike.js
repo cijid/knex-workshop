@@ -4,6 +4,7 @@
  */
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
+  await knex.schema.raw("TRUNCATE bike CASCADE");
   await knex("bike").del();
   await knex("bike").insert([
     {
@@ -12,6 +13,8 @@ exports.seed = async function (knex) {
       model: "Rockhopper",
       style: "MTB",
       year: "2026",
+      rider_id: 1,
+      bike_components_id: 1,
     },
     {
       id: 2,
@@ -19,7 +22,17 @@ exports.seed = async function (knex) {
       model: "Madone Carbon",
       style: "Road",
       year: "2026",
+      rider_id: 2,
+      bike_components_id: 2,
     },
-    { id: 3, make: "Ozark Trail", model: "M.2", style: "MTB", year: "2025" },
+    {
+      id: 3,
+      make: "Ozark Trail",
+      model: "M.2",
+      style: "MTB",
+      year: "2025",
+      rider_id: 3,
+      bike_components_id: 3,
+    },
   ]);
 };
